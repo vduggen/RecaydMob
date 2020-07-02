@@ -1,0 +1,11 @@
+@mixin d-flex($align,$justify,$direction: row) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+@mixin text($wght, $size, $font, $transform: initial) {
+    font: $wght $size $font;
+    text-transform: $transform;
+}

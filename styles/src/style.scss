@@ -1,0 +1,252 @@
+@import '../settings/colors';
+@import '../components/mixins';
+@import '../settings/_typography.sass';
+@import '../components/grid';
+
+body {
+    background: $body;
+
+    header {
+        width: 100%;
+        height: 80px;
+        z-index: 1;
+
+        position: absolute;
+        top: 0;
+
+        @include d-flex(center,center);
+        #container-header {
+            width: 80%;
+            height: 100%;
+
+            @include d-flex(center,space-between);
+
+            h1 {
+                font: bold 4rem 'Bebas Neue',sans-serif;
+                text-shadow: 1px 1px 5px #333;
+                color: $light;   
+
+                span {
+                    color: $two;
+                }
+            }
+
+            nav {
+                a {
+                    text-decoration: none;
+                    font: 600 1rem 'Open Sans',sans-serif;
+                    margin: 0 10px;
+                    color: $light;
+                    text-shadow: 1px 1px 2px #333;
+                    transition: ease-in-out .3s;
+
+                    &:hover {
+                        color: $two;
+                        text-shadow: 1px 1px 14px #333;
+                    }
+                }
+
+                .active {
+                    color: $one;
+                }
+            }
+        }
+    }
+
+    article {
+        height: 100%;
+
+        #banner {
+            height: 100%;
+            background-image: url('../../assets/banner.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            @include d-flex(center,center);
+
+            &::before {
+                content: '';
+
+                background-color: black;
+                opacity: 0.3;
+
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+
+            #text {
+                z-index: 1;
+                color: $light;
+
+                h4 {
+                    font: 500 3rem 'Open Sans',sans-serif;
+                    line-height: 2.3rem;
+                    text-transform: uppercase;
+                }
+
+                h1 {
+                    font: 700 15rem 'Ubuntu',sans-serif;
+                    text-transform: uppercase;
+                    line-height: 11.2rem;
+                    color: $one;
+                    text-shadow: 1px 1px 3px #333;
+                }
+
+                nav {
+                    width: 100%;
+                    margin-top: 1rem;
+
+                    @include d-flex(center,center);
+
+                    a {
+                        margin: 0 0.3125rem;
+                        width: 150px;
+                        height: 40px;
+                        border: none;
+                        text-decoration: none;
+                        border-radius: 2px;
+                        transition: ease-in-out .4s;
+                        box-shadow: 0 0 14px $dark;
+                        color: $dark;
+                        font: 600 1rem 'Open Sans',sans-serif;
+
+                        @include d-flex(center,center);
+
+
+                        &:first-child {
+                            background: $light;
+
+                            &:hover {
+                                background: darken($light, 15%);
+                            }
+                        }
+
+                        &:last-child {
+                            background: transparent;
+                            border: 2px solid $light;
+                            color: $light;
+                            text-shadow: 1px 1px 5px #333;
+
+                            &:hover {
+                                background: $light;
+                                color: $dark;
+                                text-shadow: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #arrowDown {
+                color: $light;
+                font-size: 5.5rem;
+                z-index: 1;
+
+                position: absolute;
+                left: 50%;
+                bottom: 10px;
+
+                transition: ease-in-out .3s;
+                animation:0.9s arrowDownAnimation infinite ;
+            }
+            
+            @keyframes arrowDownAnimation {
+                from { bottom:10px; }
+                to { bottom: 5px; }
+            }
+        }
+
+        #schedule {                
+            .container {
+                height: auto;
+                margin:0 9.1rem;
+                padding-top: 4rem;
+
+                h1 {
+                    @include text(700, 4rem, $font-Ubuntu, uppercase);
+                    display: inline-block;
+                    border-left: 10px solid $one;
+                    line-height: 49px;
+                    padding-left: 0.625rem;
+                }
+
+                table {
+                    margin-top: 20px;
+                    width: 100%;
+                    height: 23%;
+
+                    tr {
+                        border-bottom: 1px solid rgba(146, 145, 145, 0.418);
+                        height: 40%;
+
+                        @include d-flex(center,space-between);
+
+                        font-family:$font-OpenS;
+
+                        .date {
+                            font-size: 1.2rem;
+                        }
+
+                        .cityInfos {
+                            display: flex;
+                            flex-direction: column;
+
+                            span {
+                                &:first-child {
+                                    font-weight: bold; 
+                                }
+
+                                &:last-child {
+                                    color: $muted;
+                                    margin-top: 0.13rem;
+                                }
+                            }
+                        }
+                        
+                        button {
+                            width: 85px;
+                            height: 30px;
+                            border: none;
+                            border-radius: 3px;
+                            background: $light;
+                            box-shadow: 0 0 5px $shadow;
+                            transition: ease-in-out .4s;
+
+                            &:hover {
+                                box-shadow: 0 0 14px $shadow;
+                                background: darken($light, 10%);
+                            }
+                        }
+
+                        .date {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+
+        #about {
+            height: 100%;
+            background-image: url('../../assets/about.jpg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            &::before {               
+                content: '';
+                background-color: black;
+                opacity: 0.3;
+
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+}
