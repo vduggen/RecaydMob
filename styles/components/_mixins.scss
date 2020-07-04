@@ -1,3 +1,6 @@
+@import '../settings/colors';
+@import '../settings/_typography.sass';
+
 @mixin d-flex($align,$justify,$direction: row) {
     display: flex;
     align-items: $align;
@@ -8,4 +11,26 @@
 @mixin text($wght, $size, $font, $transform: initial) {
     font: $wght $size $font;
     text-transform: $transform;
+}
+
+@mixin breadcrumb($color) {
+    z-index:1;
+
+    a {
+        text-decoration: none;
+        @include text(600, 1.1rem, $font-OpenS);
+        color: $color;
+    }
+
+    .active-breadcrumb {
+        color:$one;
+    }
+}
+
+@mixin container {
+    width: 100vw;
+    height: 100%;
+    margin:0 9.1rem;
+
+    @include d-flex(flex-start,center, column);
 }

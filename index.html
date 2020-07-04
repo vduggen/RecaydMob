@@ -6,7 +6,7 @@
     <title>Home – Recayd Mob</title>
 
     <!-- Local Imports -->
-    <link rel="stylesheet" href="styles/src/reset.css">
+    <link rel="stylesheet" href="styles/src/reset.css"> 
     <link rel="stylesheet" href="styles/src/style.css">
 
     <!-- CDN Imports  -->
@@ -19,104 +19,413 @@
                 <span>Recayd</span> Mob
             </h1>
 
-            <nav>
+            <nav id="desktop-menu">
                 <a href="#banner" class="active">Inicio</a>
                 <a href="#schedule">Agenda</a>
-                <a href="#">Sobre Nós</a>
-                <a href="#">Contato</a>
+                <a href="#about">Sobre Nós</a>
+                <a href="#musics">Musicas</a>
+                <a href="#artists">Artistas</a>
+                <a href="#contact">Contato</a>
             </nav>
+
+            <button id="button-menu" onclick="openSidenav()">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
         </section>
     </header>
 
-    <article>
-        <article id="banner">
-            <div id="text">
-                <h4>The kings of</h4>
-                <h1>Trap</h1>
-                <nav>
-                    <a href="#schedule">Sobre Nós</a>
-                    <a href="">Agenda</a>
-                </nav>
+    <section id="mobile-menu">
+        <a href="javascript:void(0)" id="closeSidenav" onclick="closeSidenav()">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </a>
+
+        <a href="#banner" class="active">Inicio</a>
+        <a href="#schedule">Agenda</a>
+        <a href="#about">Sobre Nós</a>
+        <a href="#musics">Musicas</a>
+        <a href="#artists">Artistas</a>
+        <a href="#contact">Contato</a>
+    </section>
+
+    <article id="banner">
+        <div id="text">
+            <h4>The kings of</h4>
+            <h1>Trap</h1>
+            <nav>
+                <a href="#about">Sobre Nós</a>
+                <a href="#schedule">Agenda</a>
+            </nav>
+        </div>
+
+        <a href="#schedule">
+            <i class="fa fa-angle-double-down" id="arrowDown" aria-hidden="true"></i>
+        </a>
+    </article>
+
+    <article id="schedule">
+        <section class="container">
+            <div class="breadcrumb">
+                <a href="#banner">Inicio /</a>
+                <a class="active-breadcrumb">Agenda</a>
+                <h1 class="title-page">Agenda</h1>
             </div>
 
-            <a href="#schedule">
-                <i class="fa fa-angle-double-down" id="arrowDown" aria-hidden="true"></i>
-            </a>
-        </article>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="date">20 Abril</td>
+                        <td class="cityInfos">
+                            <span>São Paulo</span>
+                            <span>Allianz Parque</span>
+                        </td>
+                        <td>
+                            <button>Ingresso</button>
+                        </td>
+                    </tr>
 
+                    <tr>
+                        <td class="date">20 Abril</td>
+                        <td class="cityInfos">
+                            <span>São Paulo</span>
+                            <span>Allianz Parque</span>
+                        </td>
+                        <td>
+                            <button>Ingresso</button>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="date">20 Abril</td>
+                        <td class="cityInfos">
+                            <span>São Paulo</span>
+                            <span>Allianz Parque</span>
+                        </td>
+                        <td>
+                            <button>Ingresso</button>
+                        </td>
+                    </tr>
 
-        <article id="schedule">
-            <section class="container">
-                <h1>Agenda</h1>
+                    <tr>
+                        <td class="date">20 Abril</td>
+                        <td class="cityInfos">
+                            <span>São Paulo</span>
+                            <span>Allianz Parque</span>
+                        </td>
+                        <td>
+                            <button>Ingresso</button>
+                        </td>
+                    </tr>
 
-                <table>
-                    <tbody>
-                        <tr>
-                            <td class="date">20 Abril</td>
-                            <td class="cityInfos">
-                                <span>São Paulo</span>
-                                <span>Allianz Parque</span>
-                            </td>
-                            <td>
-                                <button>Ingresso</button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="date">20 Abril</td>
-                            <td class="cityInfos">
-                                <span>São Paulo</span>
-                                <span>Allianz Parque</span>
-                            </td>
-                            <td>
-                                <button>Ingresso</button>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td class="date">20 Abril</td>
-                            <td class="cityInfos">
-                                <span>São Paulo</span>
-                                <span>Allianz Parque</span>
-                            </td>
-                            <td>
-                                <button>Ingresso</button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="date">20 Abril</td>
-                            <td class="cityInfos">
-                                <span>São Paulo</span>
-                                <span>Allianz Parque</span>
-                            </td>
-                            <td>
-                                <button>Ingresso</button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="date">20 Abril</td>
-                            <td class="cityInfos">
-                                <span>São Paulo</span>
-                                <span>Allianz Parque</span>
-                            </td>
-                            <td>
-                                <button>Ingresso</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </article>
-        <div id="teste"></div>
-
-        <article id="about">
-        </article>
+                    <tr>
+                        <td class="date">20 Abril</td>
+                        <td class="cityInfos">
+                            <span>São Paulo</span>
+                            <span>Allianz Parque</span>
+                        </td>
+                        <td>
+                            <button>Ingresso</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </article>
+
+    <article id="about">
+        <section class="container">
+            <div class="breadcrumb">
+                <a href="#banner">Inicio /</a>
+                <a href="#schedule">Agenda /</a>
+                <a class="active-breadcrumb">Sobre nós</a>
+            </div>
+
+            <section>
+                <h1>Recayd Mob</h1>
+                <p>
+                    Mussum Ipsum, cacilds vidis litro abertis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Suco de cevadiss deixa as pessoas mais interessantis. Detraxit consequat et quo num tendi nada. Si num tem leite então bota uma pinga aí cumpadi!
+                </p>
+
+                <p>
+                    Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Atirei o pau no gatis, per gatis num morreus. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. 
+                </p>
+            </section>
+        </section>
+    </article>
+
+    <article id="musics">
+        <section class="container">
+            <div class="breadcrumb">
+                <a href="#banner">Inicio /</a>
+                <a href="#schedule">Agenda /</a>
+                <a href="#about">Sobre nós /</a>
+                <a>Musicas</a>
+            </div>
+
+            <h1 class="title-page">Musicas</h1>
+            
+            <section>                   
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front plaqtudum">
+                        </div>
+                        
+                        <div class="flip-card-back">
+                        <h1>Plaqtudum</h1> 
+                        <h3>Dfideliz, Derek, Jé Santiago</h3> 
+                        <p>18 Setembro 2018</p>
+                    
+                        <div class="container-icons">
+                            <a href="">
+                                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="">
+                                <i class="fa fa-spotify" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="">
+                                <i class="fa fa-soundcloud" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                </div>                    
+                
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front osmlkdesp">
+                        </div>
+                        
+                        <div class="flip-card-back">
+                        <h1>Mlks de Sp</h1> 
+                        <h3>Dfideliz, Mc Igu, Jé Santiago, Derek</h3> 
+                        <p>4 Junho 2020</p>
+                        
+                        <div class="container-icons">
+                            <a href="">
+                                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                            </a>
+                            
+                            <a href="">
+                                <i class="fa fa-spotify" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="">
+                                <i class="fa fa-soundcloud" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front flackjack">
+                        </div>
+                        
+                        <div class="flip-card-back">
+                        <h1>Flack Jack</h1> 
+                        <h3>Boneshawty, Derek, Dfideliz, Mc Igu & Jé Santiago</h3> 
+                        <p>18 Janeiro 2018</p>
+                    
+                        <div class="container-icons">
+                            <a href="">
+                                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                            </a>
+                            
+                            <a href="">
+                                <i class="fa fa-spotify" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="">
+                                <i class="fa fa-soundcloud" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front nicole">
+                        </div>
+                        
+                        <div class="flip-card-back">
+                        <h1>Nicole Bahls</h1> 
+                        <h3>Mc Igu, Derek & Klyn</h3> 
+                        <p>22 Fevereiro 2019</p>
+        
+                        <div class="container-icons">
+                            <a href="">
+                                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                            </a>
+                            
+                            <a href="">
+                                <i class="fa fa-spotify" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="">
+                                <i class="fa fa-soundcloud" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front plaqtudum2">
+                        </div>
+                        
+                        <div class="flip-card-back">
+                        <h1>Plaqtudum 2</h1> 
+                        <h3>Mc Igu, The Boy, Klyn</h3> 
+                        <p>26 Setembro 2018</p>
+
+                        <div class="container-icons">
+                            <a href="">
+                                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                            </a>
+                            
+                            <a href="">
+                                <i class="fa fa-spotify" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="">
+                                <i class="fa fa-soundcloud" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front flack">
+                        </div>
+                        
+                        <div class="flip-card-back">
+                        <h1>Flack Jack</h1> 
+                        <h3>Jé Santiago, Boneshawty, Mc Igu, Dfideliz & Derek</h3> 
+                        <p>18 Janeiro 2018</p>
+                        
+                        <div class="container-icons">
+                            <a href="">
+                                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                            </a>
+                            
+                            <a href="">
+                                <i class="fa fa-spotify" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="">
+                                <i class="fa fa-soundcloud" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </article>
+
+    <article id="artists">
+        <section class="container">
+            <div class="breadcrumb">
+                <a href="#banner">Inicio /</a>
+                <a href="#schedule">Agenda /</a>
+                <a href="#about">Sobre nós /</a>
+                <a href="#musics">Musicas /</a>
+                <a>Artistas</a>
+            </div>
+
+            <section>
+                <div class="card">    
+                    <div class="image"></div>                
+                    <h1>Dfideliz</h1>                 
+                </div>
+
+                <div class="card">    
+                    <div class="image"></div>                
+                    <h1>Derek</h1>                 
+                </div>
+
+                <div class="card">    
+                    <div class="image"></div>                
+                    <h1>Jé Santiago</h1>                 
+                </div>
+
+                <div class="card">    
+                    <div class="image"></div>                
+                    <h1>Mc Igu</h1>                 
+                </div>
+            </section>
+        </section>
+    </article>
+
+    <article id="contact">
+        <section class="container">
+            <div class="breadcrumb">
+                <a href="#banner">Inicio /</a>
+                <a href="#schedule">Agenda /</a>
+                <a href="#about">Sobre nós /</a>
+                <a href="#musics">Musicas /</a>
+                <a href="#artists">Artistas /</a>
+                <a>Contato</a>
+            </div>
+
+            <h1 class="title-page">Contato</h1>
+
+            <section>
+                <div class="socials">
+                    <h1>Redes Sociais</h1>
+                    <a href="">
+                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                        <span>/Recayd Mob</span>
+                    </a>
+
+                    <a href="">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        <span>/RecaydMob</span>
+                    </a>
+
+                    <a href="">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <span>/Recayd</span>
+                    </a>
+                </div>
+
+                <div class="contactShows">
+                    <h1>Contato para shows</h1>
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Email:</td>
+                                <td>contato@8milhasprodutora.com.br</td>
+                            </tr>
+                            <tr>
+                                <td>Telefone:</td>
+                                <td>011 93217-8333</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </article>
+
+    <footer>
+        <h1>Recayd Mob</h1>
+        <h2>&copy; Todos os direitos reservados - 2020</h2>
+    </footer>
 
 
     <!-- CDN Imports -->
     <script src="https://use.fontawesome.com/7be2f30e8a.js"></script>
+
+    <!-- Local Imports -->
+    <script src="script.js"></script>
 </body>
 </html>

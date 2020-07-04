@@ -1,4 +1,5 @@
-@media (max-width: 576px) {
+@charset "UTF-8";
+@media (min-width: 300px) {
   /* Extra Small */
   .col-1 {
     width: 8.3%;
@@ -278,7 +279,7 @@ body header #container-header h1 {
 body header #container-header h1 span {
   color: #7B0CFA;
 }
-body header #container-header nav a {
+body header #container-header #desktop-menu a {
   text-decoration: none;
   font: 600 1rem "Open Sans", sans-serif;
   margin: 0 10px;
@@ -286,18 +287,48 @@ body header #container-header nav a {
   text-shadow: 1px 1px 2px #333;
   transition: ease-in-out 0.3s;
 }
-body header #container-header nav a:hover {
+body header #container-header #desktop-menu a:hover {
   color: #7B0CFA;
   text-shadow: 1px 1px 14px #333;
 }
-body header #container-header nav .active {
+body header #container-header #desktop-menu .active {
   color: #770CEE;
 }
-body article {
-  height: 100%;
+body header #container-header #button-mobile {
+  display: none;
 }
-body article #banner {
+body #mobile-menu {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
   height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+body #mobile-menu #closeSidenav {
+  height: 50px;
+  font-size: 2rem;
+  margin: 0 0 0 auto;
+  width: 52px;
+  color: #fff;
+  float: right;
+}
+body #mobile-menu a {
+  width: 119px;
+  color: #fff;
+  margin: 0.5rem auto;
+  font: 600 1.5rem "Open Sans", sans-serif;
+  text-decoration: none;
+}
+body #banner {
+  height: 100vh;
   background-image: url("../../assets/banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -306,7 +337,7 @@ body article #banner {
   justify-content: center;
   flex-direction: row;
 }
-body article #banner::before {
+body #banner::before {
   content: "";
   background-color: black;
   opacity: 0.3;
@@ -315,24 +346,25 @@ body article #banner::before {
   right: 0;
   bottom: 0;
   left: 0;
+  height: 100vh;
 }
-body article #banner #text {
+body #banner #text {
   z-index: 1;
   color: #fff;
 }
-body article #banner #text h4 {
+body #banner #text h4 {
   font: 500 3rem "Open Sans", sans-serif;
   line-height: 2.3rem;
   text-transform: uppercase;
 }
-body article #banner #text h1 {
+body #banner #text h1 {
   font: 700 15rem "Ubuntu", sans-serif;
   text-transform: uppercase;
   line-height: 11.2rem;
   color: #770CEE;
   text-shadow: 1px 1px 3px #333;
 }
-body article #banner #text nav {
+body #banner #text nav {
   width: 100%;
   margin-top: 1rem;
   display: flex;
@@ -340,7 +372,7 @@ body article #banner #text nav {
   justify-content: center;
   flex-direction: row;
 }
-body article #banner #text nav a {
+body #banner #text nav a {
   margin: 0 0.3125rem;
   width: 150px;
   height: 40px;
@@ -356,29 +388,29 @@ body article #banner #text nav a {
   justify-content: center;
   flex-direction: row;
 }
-body article #banner #text nav a:first-child {
+body #banner #text nav a:first-child {
   background: #fff;
 }
-body article #banner #text nav a:first-child:hover {
+body #banner #text nav a:first-child:hover {
   background: #d9d9d9;
 }
-body article #banner #text nav a:last-child {
+body #banner #text nav a:last-child {
   background: transparent;
   border: 2px solid #fff;
   color: #fff;
   text-shadow: 1px 1px 5px #333;
 }
-body article #banner #text nav a:last-child:hover {
+body #banner #text nav a:last-child:hover {
   background: #fff;
   color: #333;
   text-shadow: none;
 }
-body article #banner #arrowDown {
+body #banner #arrowDown {
   color: #fff;
   font-size: 5.5rem;
   z-index: 1;
   position: absolute;
-  left: 50%;
+  left: 40%;
   bottom: 10px;
   transition: ease-in-out 0.3s;
   animation: 0.9s arrowDownAnimation infinite;
@@ -391,48 +423,70 @@ body article #banner #arrowDown {
     bottom: 5px;
   }
 }
-body article #schedule .container {
-  height: auto;
-  margin: 0 9.1rem;
-  padding-top: 4rem;
+body #schedule {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
-body article #schedule .container h1 {
+body #schedule .container {
+  width: 100vw;
+  height: 100%;
+  margin: 0 9.1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+body #schedule .container .breadcrumb {
+  z-index: 1;
+}
+body #schedule .container .breadcrumb a {
+  text-decoration: none;
+  font: 600 1.1rem "Open Sans", sans-serif;
+  text-transform: initial;
+  color: #333;
+}
+body #schedule .container .breadcrumb .active-breadcrumb {
+  color: #770CEE;
+}
+body #schedule .container .breadcrumb .title-page {
   font: 700 4rem "Ubuntu", sans-serif;
   text-transform: uppercase;
   display: inline-block;
   border-left: 10px solid #770CEE;
   line-height: 49px;
   padding-left: 0.625rem;
+  margin: 0.5rem 0;
 }
-body article #schedule .container table {
-  margin-top: 20px;
+body #schedule .container table {
   width: 100%;
   height: 23%;
 }
-body article #schedule .container table tr {
+body #schedule .container table tr {
   border-bottom: 1px solid rgba(146, 145, 145, 0.418);
-  height: 40%;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
   font-family: "Open Sans", sans-serif;
 }
-body article #schedule .container table tr .date {
+body #schedule .container table tr .date {
   font-size: 1.2rem;
 }
-body article #schedule .container table tr .cityInfos {
+body #schedule .container table tr .cityInfos {
   display: flex;
   flex-direction: column;
 }
-body article #schedule .container table tr .cityInfos span:first-child {
+body #schedule .container table tr .cityInfos span:first-child {
   font-weight: bold;
 }
-body article #schedule .container table tr .cityInfos span:last-child {
+body #schedule .container table tr .cityInfos span:last-child {
   color: #666565;
   margin-top: 0.13rem;
 }
-body article #schedule .container table tr button {
+body #schedule .container table tr button {
   width: 85px;
   height: 30px;
   border: none;
@@ -441,29 +495,564 @@ body article #schedule .container table tr button {
   box-shadow: 0 0 5px rgba(51, 51, 51, 0.568);
   transition: ease-in-out 0.4s;
 }
-body article #schedule .container table tr button:hover {
+body #schedule .container table tr button:hover {
   box-shadow: 0 0 14px rgba(51, 51, 51, 0.568);
   background: #e6e6e6;
 }
-body article #schedule .container table tr .date {
+body #schedule .container table tr .date {
   font-weight: bold;
 }
-body article #about {
-  height: 100%;
+body #about {
+  height: 100vh;
   background-image: url("../../assets/about.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
-body article #about::before {
+body #about::before {
   content: "";
   background-color: black;
-  opacity: 0.3;
+  opacity: 0.7;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+}
+body #about .container {
+  width: 100vw;
+  height: 100%;
+  margin: 0 9.1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body #about .container .breadcrumb {
+  z-index: 1;
+}
+body #about .container .breadcrumb a {
+  text-decoration: none;
+  font: 600 1.1rem "Open Sans", sans-serif;
+  text-transform: initial;
+  color: #fff;
+}
+body #about .container .breadcrumb .active-breadcrumb {
+  color: #770CEE;
+}
+body #about .container section {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 526px;
+}
+body #about .container section h1 {
+  font: 700 5rem "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  color: #7B0CFA;
+  text-shadow: 0 0 10px rgba(51, 51, 51, 0.568);
+}
+body #about .container section p {
+  color: #fff;
+  font: 300 1rem "Open Sans", sans-serif;
+  text-transform: initial;
+  text-align: center;
+  margin: 0.75rem 0;
+}
+body #musics {
+  height: 150vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
+}
+body #musics .container {
+  width: 100vw;
+  height: 100%;
+  margin: 0 9.1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+body #musics .container .breadcrumb {
+  z-index: 1;
+}
+body #musics .container .breadcrumb a {
+  text-decoration: none;
+  font: 600 1.1rem "Open Sans", sans-serif;
+  text-transform: initial;
+  color: #333;
+}
+body #musics .container .breadcrumb .active-breadcrumb {
+  color: #770CEE;
+}
+body #musics .container .title-page {
+  font: 700 4rem "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  display: inline-block;
+  border-left: 10px solid #770CEE;
+  line-height: 49px;
+  padding-left: 0.625rem;
+  margin-bottom: 2rem;
+}
+body #musics .container section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2rem;
+  row-gap: 2rem;
+  margin: 0 auto;
+}
+body #musics .container section .flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+body #musics .container section .flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+body #musics .container section .flip-card .flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+body #musics .container section .flip-card .flip-card-inner .flip-card-front {
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(51, 51, 51, 0.568);
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: #bbb;
+}
+body #musics .container section .flip-card .flip-card-inner .plaqtudum {
+  background-image: url("../../assets/plaqtudum.jpg");
+  background-position: 53% center;
+  background-size: 175%;
+}
+body #musics .container section .flip-card .flip-card-inner .osmlkdesp {
+  background-image: url("../../assets/osmlkdesp.jpg");
+  background-position: center center;
+  background-size: 222%;
+}
+body #musics .container section .flip-card .flip-card-inner .flackjack {
+  background-image: url("../../assets/flackjack.jpg");
+  background-position: center center;
+  background-size: 230%;
+}
+body #musics .container section .flip-card .flip-card-inner .nicole {
+  background-image: url("../../assets/nicole.jpg");
+  background-position: center center;
+  background-size: 100%;
+}
+body #musics .container section .flip-card .flip-card-inner .plaqtudum2 {
+  background-image: url("../../assets/plaqtudum2.png");
+  background-position: center center;
+  background-size: 100%;
+}
+body #musics .container section .flip-card .flip-card-inner .flack {
+  background-image: url("../../assets/flack.webp");
+  background-position: center center;
+  background-size: 100%;
+}
+body #musics .container section .flip-card .flip-card-inner .container-icons {
+  margin-top: 1rem;
+}
+body #musics .container section .flip-card .flip-card-inner .container-icons a {
+  font-size: 2.3rem;
+  text-decoration: none;
+}
+body #musics .container section .flip-card .flip-card-inner .container-icons a:nth-child(1) {
+  color: #ff0000;
+}
+body #musics .container section .flip-card .flip-card-inner .container-icons a:nth-child(2) {
+  color: #1ed760;
+  margin: 0 10px;
+}
+body #musics .container section .flip-card .flip-card-inner .container-icons a:nth-child(3) {
+  color: #ff3300;
+}
+body #musics .container section .flip-card .flip-card-inner .flip-card-back {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: #770CEE;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 14px rgba(51, 51, 51, 0.568);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body #musics .container section .flip-card .flip-card-inner .flip-card-back h1 {
+  font: 700 2.5rem "Ubuntu", sans-serif;
+  text-transform: uppercase;
+}
+body #musics .container section .flip-card .flip-card-inner .flip-card-back h3 {
+  font: 300 1.1rem "Open Sans", sans-serif;
+  text-transform: initial;
+}
+body #musics .container section .flip-card .flip-card-inner .flip-card-back p {
+  font: 600 1.1rem "Open Sans", sans-serif;
+  text-transform: initial;
+  margin-top: 0.75rem;
+}
+body #artists {
+  height: 120vh;
+  background-image: url("../../assets/artists.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+body #artists::before {
+  content: "";
+  background: #000;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+body #artists .container {
+  width: 100vw;
+  height: 100%;
+  margin: 0 9.1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+body #artists .container .breadcrumb {
+  z-index: 1;
+  top: 3%;
+}
+body #artists .container .breadcrumb a {
+  text-decoration: none;
+  font: 600 1.1rem "Open Sans", sans-serif;
+  text-transform: initial;
+  color: #fff;
+}
+body #artists .container .breadcrumb .active-breadcrumb {
+  color: #770CEE;
+}
+body #artists .container section {
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+body #artists .container section .card {
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  position: relative;
+}
+body #artists .container section .card:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+body #artists .container section .card:nth-child(1):hover .image {
+  filter: blur(1.5px);
+}
+body #artists .container section .card:nth-child(1):hover h1 {
+  opacity: 1;
+}
+body #artists .container section .card:nth-child(1) .image {
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  background-image: url("../../assets/dfideliz.webp");
+  background-position: center center;
+  background-size: cover;
+}
+body #artists .container section .card:nth-child(1) h1 {
+  opacity: 0;
+  position: absolute;
+  color: #fff;
+  text-shadow: 0 0 14px rgba(51, 51, 51, 0.568);
+  font: 700 3rem "Ubuntu", sans-serif;
+  text-transform: uppercase;
+}
+body #artists .container section .card:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+body #artists .container section .card:nth-child(2):hover .image {
+  filter: blur(1.5px);
+}
+body #artists .container section .card:nth-child(2):hover h1 {
+  opacity: 1;
+}
+body #artists .container section .card:nth-child(2) .image {
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  background-image: url("../../assets/derek.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+body #artists .container section .card:nth-child(2) h1 {
+  opacity: 0;
+  position: absolute;
+  color: #fff;
+  text-shadow: 0 0 14px rgba(51, 51, 51, 0.568);
+  font: 700 3rem "Ubuntu", sans-serif;
+  text-transform: uppercase;
+}
+body #artists .container section .card:nth-child(3) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+body #artists .container section .card:nth-child(3):hover .image {
+  filter: blur(1.5px);
+}
+body #artists .container section .card:nth-child(3):hover h1 {
+  opacity: 1;
+}
+body #artists .container section .card:nth-child(3) .image {
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  background-image: url("../../assets/jé.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+body #artists .container section .card:nth-child(3) h1 {
+  opacity: 0;
+  position: absolute;
+  color: #fff;
+  text-shadow: 0 0 14px rgba(51, 51, 51, 0.568);
+  font: 700 2.5rem "Ubuntu", sans-serif;
+  text-transform: uppercase;
+}
+body #artists .container section .card:nth-child(4) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+body #artists .container section .card:nth-child(4):hover .image {
+  filter: blur(1.5px);
+}
+body #artists .container section .card:nth-child(4):hover h1 {
+  opacity: 1;
+}
+body #artists .container section .card:nth-child(4) .image {
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  background-image: url("../../assets/igu.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+body #artists .container section .card:nth-child(4) h1 {
+  opacity: 0;
+  position: absolute;
+  color: #fff;
+  text-shadow: 0 0 14px rgba(51, 51, 51, 0.568);
+  font: 700 3rem "Ubuntu", sans-serif;
+  text-transform: uppercase;
+}
+body #contact {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
+}
+body #contact .container {
+  width: 100vw;
+  height: 100%;
+  margin: 0 9.1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+body #contact .container .breadcrumb {
+  z-index: 1;
+}
+body #contact .container .breadcrumb a {
+  text-decoration: none;
+  font: 600 1.1rem "Open Sans", sans-serif;
+  text-transform: initial;
+  color: #333;
+}
+body #contact .container .breadcrumb .active-breadcrumb {
+  color: #770CEE;
+}
+body #contact .container .title-page {
+  font: 700 4rem "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  display: inline-block;
+  border-left: 10px solid #770CEE;
+  line-height: 49px;
+  padding-left: 0.625rem;
+}
+body #contact .container section {
+  height: 60%;
+  margin-top: 1.3rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  font: 600 1.5rem "Open Sans", sans-serif;
+  text-transform: initial;
+}
+body #contact .container section .socials {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+body #contact .container section .socials a {
+  font-size: 2.5rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+body #contact .container section .socials a .fa-facebook-official {
+  color: #3B5998;
+}
+body #contact .container section .socials a .fa-twitter {
+  color: #00ACEE;
+}
+body #contact .container section .socials a .fa-instagram {
+  color: #DD2A7B;
+}
+body #contact .container section .socials a span {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  color: #333;
+}
+body #contact .container section .contactShows {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+body #contact .container section .contactShows table td:last-child {
+  width: 76%;
+  color: #666565;
+}
+body footer {
+  height: 25vh;
+  background: #770CEE;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body footer h1 {
+  font: bold 4rem "Bebas Neue", sans-serif;
+  text-transform: initial;
+  line-height: 54px;
+}
+@media (min-width: 300px) {
+  body header #container-header {
+    width: 95%;
+  }
+  body header #container-header h1 {
+    font-size: 2.5rem;
+  }
+  body header #container-header #desktop-menu {
+    display: none;
+  }
+  body header #container-header #mobile-menu {
+    display: block;
+  }
+  body header #container-header #button-menu {
+    display: block;
+    background: transparent;
+    border: none;
+    font-size: 2.3rem;
+    color: #fff;
+  }
+  body #banner {
+    background-position: center;
+    background-size: cover;
+  }
+  body #banner #text {
+    width: 95%;
+  }
+  body #banner #text h1 {
+    font-size: 6.7rem;
+    text-align: center;
+    line-height: 6rem;
+  }
+  body #banner #text h4 {
+    font-size: 2.5rem;
+  }
+  body #schedule .container {
+    width: 95%;
+    margin: 0 auto;
+  }
+  body #schedule .container .breadcrumb a {
+    font-size: 1.5rem;
+  }
+  body #about {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+  }
+  body #about .container {
+    width: 95%;
+    margin: 0 auto;
+  }
+  body #about .container .breadcrumb a {
+    font-size: 1.3rem;
+  }
+  body #about .container section {
+    width: 100%;
+  }
+  body #about .container section h1 {
+    width: 100%;
+    font-size: 4rem;
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
