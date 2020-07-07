@@ -20,6 +20,7 @@
         text-decoration: none;
         @include text(600, 1.1rem, $font-OpenS);
         color: $color;
+        display:inline-block;
     }
 
     .active-breadcrumb {

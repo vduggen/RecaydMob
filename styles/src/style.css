@@ -298,16 +298,16 @@ body header #container-header #button-mobile {
   display: none;
 }
 body #mobile-menu {
-  z-index: 2;
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 4;
   top: 0;
   right: 0;
   background-color: #111;
+  opacity: 0.9;
   overflow-x: hidden;
   padding-top: 60px;
   transition: 0.5s;
@@ -446,6 +446,7 @@ body #schedule .container .breadcrumb a {
   font: 600 1.1rem "Open Sans", sans-serif;
   text-transform: initial;
   color: #333;
+  display: inline-block;
 }
 body #schedule .container .breadcrumb .active-breadcrumb {
   color: #770CEE;
@@ -545,6 +546,7 @@ body #about .container .breadcrumb a {
   font: 600 1.1rem "Open Sans", sans-serif;
   text-transform: initial;
   color: #fff;
+  display: inline-block;
 }
 body #about .container .breadcrumb .active-breadcrumb {
   color: #770CEE;
@@ -595,6 +597,7 @@ body #musics .container .breadcrumb a {
   font: 600 1.1rem "Open Sans", sans-serif;
   text-transform: initial;
   color: #333;
+  display: inline-block;
 }
 body #musics .container .breadcrumb .active-breadcrumb {
   color: #770CEE;
@@ -764,6 +767,7 @@ body #artists .container .breadcrumb a {
   font: 600 1.1rem "Open Sans", sans-serif;
   text-transform: initial;
   color: #fff;
+  display: inline-block;
 }
 body #artists .container .breadcrumb .active-breadcrumb {
   color: #770CEE;
@@ -918,6 +922,7 @@ body #contact .container .breadcrumb a {
   font: 600 1.1rem "Open Sans", sans-serif;
   text-transform: initial;
   color: #333;
+  display: inline-block;
 }
 body #contact .container .breadcrumb .active-breadcrumb {
   color: #770CEE;
@@ -938,6 +943,10 @@ body #contact .container section {
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, 1fr);
   font: 600 1.5rem "Open Sans", sans-serif;
+  text-transform: initial;
+}
+body #contact .container section h1 {
+  font: 700 1.5rem "Ubuntu", sans-serif;
   text-transform: initial;
 }
 body #contact .container section .socials {
@@ -985,7 +994,7 @@ body footer {
   justify-content: center;
   flex-direction: column;
 }
-body footer h1 {
+body footer .container h1 {
   font: bold 4rem "Bebas Neue", sans-serif;
   text-transform: initial;
   line-height: 54px;
@@ -1015,10 +1024,10 @@ body footer h1 {
     background-size: cover;
   }
   body #banner #text {
-    width: 95%;
+    width: 300px;
   }
   body #banner #text h1 {
-    font-size: 6.7rem;
+    font-size: 7rem;
     text-align: center;
     line-height: 6rem;
   }
@@ -1030,7 +1039,7 @@ body footer h1 {
     margin: 0 auto;
   }
   body #schedule .container .breadcrumb a {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   body #about {
     display: flex;
@@ -1052,6 +1061,526 @@ body footer h1 {
     width: 100%;
     font-size: 4rem;
     text-align: center;
+  }
+  body #musics {
+    height: auto;
+    padding: 3rem 0;
+  }
+  body #musics .container {
+    margin: 0 auto;
+  }
+  body #musics .container .breadcrumb {
+    margin: 0 auto;
+    text-align: center;
+  }
+  body #musics .container .breadcrumb a {
+    font-size: 1.3rem;
+  }
+  body #musics .container .breadcrumb .title-page {
+    font-size: 3.7rem;
+    margin: 1rem auto 2rem auto;
+  }
+  body #musics .container section {
+    grid-template-columns: 1fr;
+  }
+  body #musics .container section .flip-card {
+    width: 280px;
+  }
+  body #musics .container section .flip-card .flip-card-inner .flip-card-front, body #musics .container section .flip-card .flip-card-inner .flip-card-back {
+    width: 280px;
+  }
+  body #artists {
+    height: auto;
+    padding: 3rem 0;
+  }
+  body #artists .container {
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  body #artists .container .breadcrumb {
+    margin: 0 0.75rem 1rem 0.75rem;
+  }
+  body #artists .container .breadcrumb a {
+    font-size: 1.3rem;
+  }
+  body #artists .container section {
+    grid-template-columns: 1fr;
+  }
+  body #artists .container section .card {
+    width: 280px;
+  }
+  body #contact .container {
+    width: 283px;
+  }
+  body #contact .container .breadcrumb {
+    text-align: left;
+  }
+  body #contact .container .breadcrumb a {
+    font-size: 1.3rem;
+  }
+  body #contact .container .breadcrumb .title-page {
+    font-size: 3.5rem;
+    margin: 1rem auto 2rem auto;
+  }
+  body #contact .container section {
+    margin: 1.3rem auto 0 auto;
+  }
+  body #contact .container section .socials {
+    width: 100%;
+  }
+  body #contact .container section .contactShows {
+    width: 100%;
+  }
+  body #contact .container section .contactShows table tbody tr {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  body #contact .container section .contactShows table tbody tr td:last-child {
+    word-break: break-word;
+    width: 100%;
+  }
+  body footer .container {
+    width: 257px;
+    text-align: center;
+  }
+}
+@media (min-width: 576px) {
+  body header #container-header {
+    width: 95%;
+  }
+  body header #container-header h1 {
+    font-size: 2.5rem;
+  }
+  body header #container-header #desktop-menu {
+    display: none;
+  }
+  body header #container-header #mobile-menu {
+    display: block;
+  }
+  body header #container-header #button-menu {
+    display: block;
+    background: transparent;
+    border: none;
+    font-size: 2.3rem;
+    color: #fff;
+  }
+  body #banner {
+    background-position: center;
+    background-size: cover;
+  }
+  body #banner #arrowDown {
+    left: 45%;
+  }
+  body #banner #text {
+    width: 400px;
+  }
+  body #banner #text h1 {
+    font-size: 9.4rem;
+    text-align: center;
+    line-height: 7.1rem;
+  }
+  body #banner #text h4 {
+    font-size: 2.5rem;
+  }
+  body #schedule .container {
+    width: 95%;
+    margin: 0 auto;
+  }
+  body #schedule .container .breadcrumb {
+    display: flex;
+    flex-direction: column;
+  }
+  body #schedule .container .breadcrumb nav a {
+    font-size: 1.3rem;
+    display: inline-block;
+  }
+  body #about {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+  }
+  body #about .container {
+    width: 95%;
+    margin: 0 auto;
+  }
+  body #about .container .breadcrumb a {
+    font-size: 1.3rem;
+  }
+  body #about .container section {
+    width: 100%;
+  }
+  body #about .container section h1 {
+    width: 100%;
+    font-size: 4rem;
+    text-align: center;
+  }
+  body #musics {
+    height: auto;
+    padding: 3rem 0;
+  }
+  body #musics .container {
+    margin: 0 auto;
+  }
+  body #musics .container .breadcrumb {
+    text-align: center;
+  }
+  body #musics .container .breadcrumb a {
+    font-size: 1.3rem;
+  }
+  body #musics .container .breadcrumb .title-page {
+    font-size: 3.7rem;
+    margin: 1rem auto 2rem auto;
+  }
+  body #musics .container section {
+    grid-template-columns: 1fr;
+  }
+  body #musics .container section .flip-card {
+    width: 280px;
+  }
+  body #musics .container section .flip-card .flip-card-inner .flip-card-front, body #musics .container section .flip-card .flip-card-inner .flip-card-back {
+    width: 280px;
+  }
+  body #artists {
+    height: auto;
+    padding: 3rem 0;
+  }
+  body #artists .container {
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  body #artists .container .breadcrumb {
+    margin: 0 0.75rem 1rem 0.75rem;
+  }
+  body #artists .container .breadcrumb a {
+    font-size: 1.3rem;
+  }
+  body #artists .container section {
+    grid-template-columns: 1fr;
+  }
+  body #artists .container section .card {
+    width: 280px;
+  }
+  body #contact .container {
+    margin: 0 auto;
+  }
+  body #contact .container .breadcrumb {
+    text-align: center;
+  }
+  body #contact .container .breadcrumb a {
+    font-size: 1.3rem;
+  }
+  body #contact .container .breadcrumb .title-page {
+    font-size: 3.5rem;
+    margin: 1rem auto 2rem auto;
+  }
+  body footer .container {
+    width: 257px;
+    text-align: center;
+  }
+}
+@media (min-width: 768px) {
+  body #banner {
+    background-position: center;
+    background-size: cover;
+  }
+  body #banner #arrowDown {
+    left: 47%;
+  }
+  body #banner #text {
+    width: 700px;
+  }
+  body #banner #text h1 {
+    font-size: 16rem;
+    text-align: center;
+    line-height: 12rem;
+  }
+  body #banner #text h4 {
+    font-size: 2.5rem;
+  }
+  body #musics {
+    height: auto;
+    padding: 3rem 0;
+  }
+  body #musics .container {
+    width: 594px;
+  }
+  body #musics .container .breadcrumb {
+    margin: 0;
+    text-align: left;
+  }
+  body #musics .container .breadcrumb a {
+    font-size: 1.3rem;
+  }
+  body #musics .container .breadcrumb .title-page {
+    font-size: 3.7rem;
+    margin: 1rem auto 2rem auto;
+  }
+  body #musics .container section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  body #musics .container section .flip-card {
+    width: 280px;
+  }
+  body #musics .container section .flip-card .flip-card-inner .flip-card-front, body #musics .container section .flip-card .flip-card-inner .flip-card-back {
+    width: 280px;
+  }
+  body #artists {
+    height: auto;
+    padding: 3rem 0;
+  }
+  body #artists .container {
+    margin: 0 auto;
+  }
+  body #artists .container .breadcrumb {
+    margin: 0 0.75rem 1rem 0.75rem;
+  }
+  body #artists .container .breadcrumb a {
+    font-size: 1.3rem;
+  }
+  body #artists .container section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  body #artists .container section .card {
+    width: 280px;
+  }
+  body #contact .container {
+    width: 100vw;
+    height: 100%;
+    margin: 0 9.1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+  body #contact .container .breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  body #contact .container .breadcrumb a {
+    font-size: 1.3rem;
+  }
+  body #contact .container .breadcrumb .title-page {
+    font-size: 3.5rem;
+    margin: 1rem auto 2rem 0;
+  }
+  body #contact .container section {
+    width: 100%;
+  }
+  body #contact .container section .socials {
+    width: 100%;
+  }
+  body #contact .container section .contactShows {
+    width: 100%;
+  }
+  body #contact .container section .contactShows table {
+    width: 100%;
+  }
+  body #contact .container section .contactShows table tbody tr {
+    width: 550px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  body #contact .container section .contactShows table tbody tr td:last-child {
+    width: 410px;
+  }
+  body footer .container {
+    width: auto;
+    text-align: center;
+  }
+  body footer .container h1 {
+    font-size: 5rem;
+    line-height: 4rem;
+  }
+}
+@media (min-width: 992px) {
+  body header #container-header {
+    width: 95%;
+  }
+  body header #container-header h1 {
+    font-size: 4rem;
+  }
+  body header #container-header #desktop-menu {
+    display: block;
+  }
+  body header #container-header #mobile-menu, body header #container-header #button-menu {
+    display: none;
+  }
+  body #banner {
+    background-position: center;
+    background-size: cover;
+  }
+  body #banner #arrowDown {
+    left: 47%;
+  }
+  body #banner #text {
+    width: 700px;
+  }
+  body #banner #text h1 {
+    font-size: 16rem;
+    text-align: center;
+    line-height: 12rem;
+  }
+  body #banner #text h4 {
+    font-size: 2.5rem;
+  }
+  body #schedule .container {
+    width: 100vw;
+    height: 100%;
+    margin: 0 9.1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+  body #schedule .container .breadcrumb {
+    display: flex;
+    flex-direction: column;
+  }
+  body #schedule .container .breadcrumb nav a {
+    font-size: 1.3rem;
+    display: inline-block;
+  }
+  body #about {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+  }
+  body #about .container {
+    width: 100vw;
+    height: 100%;
+    margin: 0 9.1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+  body #about .container .breadcrumb {
+    margin: 0 auto;
+  }
+  body #about .container .breadcrumb a {
+    font-size: 1.3rem;
+  }
+  body #about .container section {
+    width: 100%;
+  }
+  body #about .container section h1 {
+    width: 100%;
+    font-size: 5.5rem;
+    text-align: center;
+  }
+  body #musics {
+    height: auto;
+    padding: 3rem 0;
+  }
+  body #musics .container {
+    width: 904px;
+  }
+  body #musics .container .breadcrumb {
+    text-align: left;
+  }
+  body #musics .container .breadcrumb a {
+    font-size: 1.3rem;
+  }
+  body #musics .container .breadcrumb .title-page {
+    font-size: 3.7rem;
+    margin: 1rem auto 2rem auto;
+  }
+  body #musics .container section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  body #musics .container section .flip-card {
+    width: 280px;
+  }
+  body #musics .container section .flip-card .flip-card-inner .flip-card-front, body #musics .container section .flip-card .flip-card-inner .flip-card-back {
+    width: 280px;
+  }
+  body #artists {
+    height: auto;
+    padding: 3rem 0;
+  }
+  body #artists .container {
+    margin: 0 auto;
+  }
+  body #artists .container .breadcrumb {
+    margin: 0 0.75rem 1rem 0.75rem;
+  }
+  body #artists .container .breadcrumb a {
+    font-size: 1.3rem;
+  }
+  body #artists .container section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  body #artists .container section .card {
+    width: 280px;
+  }
+  body #contact .container {
+    width: 100vw;
+    height: 100%;
+    margin: 0 9.1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+  body #contact .container .breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  body #contact .container .breadcrumb a {
+    font-size: 1.3rem;
+  }
+  body #contact .container .breadcrumb .title-page {
+    font-size: 3.5rem;
+    margin: 1rem auto 2rem 0;
+  }
+  body #contact .container section {
+    width: 100%;
+  }
+  body #contact .container section .socials {
+    width: 100%;
+  }
+  body #contact .container section .contactShows {
+    width: 100%;
+  }
+  body #contact .container section .contactShows table {
+    width: 100%;
+  }
+  body #contact .container section .contactShows table tbody tr {
+    width: 550px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  body #contact .container section .contactShows table tbody tr td:last-child {
+    width: 410px;
+  }
+  body footer .container {
+    width: auto;
+    text-align: center;
+  }
+  body footer .container h1 {
+    font-size: 5rem;
+    line-height: 4rem;
+  }
+}
+@media (min-width: 1200px) {
+  body #banner #text {
+    width: 650px;
+  }
+  body #banner #arrowDown {
+    left: 48%;
+  }
+  body #musics .breadcrumb {
+    width: 900px;
+    margin: 0 auto;
   }
 }
 
